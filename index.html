@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Shambhvi Dhyanibali | Women's Wellness & Homeopathy Clinic</title>
+  <meta name="description" content="Dr. Shambhvi Dhyanibali — Expert homeopath specializing in women's health, PCOD/PCOS, skin care, hair care, hormonal wellness, and holistic nutrition. Book your consultation today." />
+  <meta name="keywords" content="homeopathy, women's health, PCOD, PCOS, skin care, hair care, hormonal health, wellness, nutrition, Dr. Shambhvi" />
+  <meta name="author" content="Dr. Shambhvi Dhyanibali" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Dr. Shambhvi Dhyanibali | Women's Wellness & Homeopathy Clinic" />
+  <meta property="og:description" content="Holistic homeopathy for women — PCOD, hormonal balance, skin glow, hair health, and complete wellness." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-cover.jpg" />
+  <meta property="og:url" content="https://www.drshambhvi.com" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================
+       CSS VARIABLES & RESET
+    =========================== */
+    :root {
+      --rose:        #e8788a;
+      --rose-light:  #f5b8c3;
+      --rose-pale:   #fde8ec;
+      --lavender:    #c5aee8;
+      --lavender-light: #ede5fb;
+      --gold:        #d4a574;
+      --gold-light:  #f5e4d0;
+      --cream:       #fdf8f5;
+      --white:       #ffffff;
+      --text-dark:   #2d1f26;
+      --text-mid:    #5a4554;
+      --text-soft:   #9a7f8e;
+      --border:      rgba(200,160,175,0.25);
+      --shadow-soft: 0 8px 40px rgba(180,100,130,0.12);
+      --shadow-card: 0 4px 24px rgba(180,100,130,0.10);
+      --shadow-hover:0 16px 56px rgba(180,100,130,0.22);
+      --grad-hero:   linear-gradient(135deg, #fff0f4 0%, #f3eeff 50%, #fff5ee 100%);
+      --grad-rose:   linear-gradient(135deg, #e8788a, #c5aee8);
+      --grad-gold:   linear-gradient(135deg, #d4a574, #e8788a);
+      --radius-sm:   12px;
+      --radius-md:   20px;
+      --radius-lg:   32px;
+      --radius-xl:   48px;
+      --ff-serif:    'Cormorant Garamond', Georgia, serif;
+      --ff-sans:     'DM Sans', system-ui, sans-serif;
+      --transition:  all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--ff-sans);
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: var(--ff-sans); border: none; outline: none; }
+    ul { list-style: none; }
+
+    /* ===========================
+       SCROLL PROGRESS BAR
+    =========================== */
+    #scroll-bar {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: var(--grad-rose);
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ===========================
+       LOADER
+    =========================== */
+    #loader {
+      position: fixed; inset: 0; z-index: 9998;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 20px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+
+    .loader-logo {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    .loader-logo span { color: var(--rose); font-style: italic; }
+
+    .loader-petals {
+      position: relative; width: 80px; height: 80px;
+    }
+    .petal {
+      position: absolute; top: 50%; left: 50%;
+      width: 20px; height: 36px;
+      background: var(--grad-rose);
+      border-radius: 50% 50% 0 50%;
+      transform-origin: bottom center;
+      animation: bloomPetal 2s ease-in-out infinite;
+      opacity: 0.85;
+    }
+    .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg)   translateY(-50%); animation-delay: 0s; }
+    .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg)  translateY(-50%); animation-delay: 0.15s; }
+    .petal:nth-child(3) { transform: translateX(-50%) rotate(90deg)  translateY(-50%); animation-delay: 0.30s; }
+    .petal:nth-child(4) { transform: translateX(-50%) rotate(135deg) translateY(-50%); animation-delay: 0.45s; }
+    .petal:nth-child(5) { transform: translateX(-50%) rotate(180deg) translateY(-50%); animation-delay: 0.60s; }
+    .petal:nth-child(6) { transform: translateX(-50%) rotate(225deg) translateY(-50%); animation-delay: 0.75s; }
+    .petal:nth-child(7) { transform: translateX(-50%) rotate(270deg) translateY(-50%); animation-delay: 0.90s; }
+    .petal:nth-child(8) { transform: translateX(-50%) rotate(315deg) translateY(-50%); animation-delay: 1.05s; }
+
+    @keyframes bloomPetal {
+      0%, 100% { transform: translateX(-50%) rotate(calc(var(--r,0)*45deg)) translateY(-50%) scale(0.85); opacity: 0.6; }
+      50%       { transform: translateX(-50%) rotate(calc(var(--r,0)*45deg)) translateY(-50%) scale(1.15); opacity: 1; }
+    }
+
+    .loader-credit {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      letter-spacing: 0.04em;
+    }
+    .loader-credit a {
+      color: var(--rose);
+      font-weight: 600;
+      border-bottom: 1px solid var(--rose-light);
+      padding-bottom: 1px;
+      transition: var(--transition);
+    }
+    .loader-credit a:hover { color: var(--text-dark); }
+
+    .loader-bar-wrap {
+      width: 200px; height: 3px;
+      background: var(--rose-pale);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      background: var(--grad-rose);
+      border-radius: 99px;
+      animation: loaderFill 2s ease forwards;
+    }
+    @keyframes loaderFill { from { width: 0 } to { width: 100% } }
+
+    /* ===========================
+       NAVBAR
+    =========================== */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      padding: 0 5%;
+      height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(253,248,245,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 2px 24px rgba(180,100,130,0.10);
+      height: 62px;
+    }
+
+    .nav-brand {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+    .nav-brand span { color: var(--rose); font-style: italic; display: block; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.03em;
+      transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--rose);
+      background: var(--rose-pale);
+    }
+
+    .nav-cta {
+      background: var(--grad-rose);
+      color: var(--white) !important;
+      padding: 9px 20px !important;
+      border-radius: 99px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 16px rgba(232,120,138,0.35);
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,120,138,0.45); background: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-dark);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(253,248,245,0.98);
+      backdrop-filter: blur(16px);
+      padding: 20px 5% 28px;
+      flex-direction: column; gap: 4px;
+      box-shadow: 0 12px 40px rgba(180,100,130,0.12);
+      z-index: 899;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 16px;
+      font-size: 0.92rem; font-weight: 500;
+      color: var(--text-mid);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--rose-pale); color: var(--rose); }
+    .mobile-menu .nav-cta {
+      background: var(--grad-rose) !important;
+      color: var(--white) !important;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* ===========================
+       SHARED SECTION STYLES
+    =========================== */
+    section { padding: 96px 5%; position: relative; overflow: hidden; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose);
+      background: var(--rose-pale);
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .section-title em { color: var(--rose); font-style: italic; }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-soft);
+      max-width: 540px;
+      margin-top: 12px;
+      line-height: 1.75;
+    }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header .section-sub { margin-left: auto; margin-right: auto; }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===========================
+       REVEAL ANIMATIONS
+    =========================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left  { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-right { opacity: 0; transform: translateX(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ===========================
+       HERO SECTION
+    =========================== */
+    #home {
+      min-height: 100vh;
+      background: var(--grad-hero);
+      display: flex; align-items: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      position: relative;
+    }
+
+    .hero-blob-1 {
+      width: 600px; height: 600px;
+      background: rgba(232,120,138,0.12);
+      top: -100px; right: -150px;
+    }
+    .hero-blob-2 {
+      width: 400px; height: 400px;
+      background: rgba(197,174,232,0.15);
+      bottom: -80px; left: -100px;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--rose);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--rose);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:0.6} }
+
+    .hero-heading {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-heading em { color: var(--rose); font-style: italic; }
+    .hero-heading strong { color: var(--text-dark); font-weight: 700; display: block; }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+    }
+    .btn-primary {
+      background: var(--grad-rose);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      box-shadow: 0 6px 24px rgba(232,120,138,0.38);
+      transition: var(--transition);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(232,120,138,0.5); }
+
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(37,211,102,0.1);
+      border: 1.5px solid rgba(37,211,102,0.35);
+      color: #1a8a45;
+      padding: 13px 28px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .btn-whatsapp:hover { background: #25d366; color: var(--white); border-color: #25d366; transform: translateY(-3px); }
+    .btn-whatsapp svg { width: 18px; height: 18px; }
+
+    .hero-trust {
+      display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .trust-icon {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-card);
+      font-size: 1.1rem;
+    }
+    .trust-text { font-size: 0.8rem; color: var(--text-soft); line-height: 1.3; }
+    .trust-text strong { display: block; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; }
+
+    .hero-image-wrap {
+      position: relative; z-index: 1;
+    }
+    .hero-img-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(180,100,130,0.22);
+    }
+    .hero-img-card img {
+      width: 100%; height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-img-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(45,31,38,0.4) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: var(--shadow-soft);
+      z-index: 2;
+      animation: floatCard 5s ease-in-out infinite;
+    }
+    .floating-card:nth-child(2) { animation-delay: -2s; }
+    .floating-card:nth-child(3) { animation-delay: -4s; }
+
+    @keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+    .fc-1 { bottom: 60px; left: -40px; }
+    .fc-2 { top: 60px; right: -30px; }
+    .fc-3 { bottom: 160px; right: -30px; }
+
+    .fc-inner { display: flex; align-items: center; gap: 10px; }
+    .fc-icon {
+      width: 36px; height: 36px;
+      background: var(--rose-pale);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .fc-text strong { display: block; font-size: 0.85rem; color: var(--text-dark); font-weight: 600; }
+    .fc-text span { font-size: 0.72rem; color: var(--text-soft); }
+
+    /* ===========================
+       ABOUT SECTION
+    =========================== */
+    #about {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+    .about-img-frame img { width: 100%; height: 580px; object-fit: cover; }
+    .about-img-frame::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom right, rgba(232,120,138,0.12), transparent);
+    }
+
+    .about-badge-wrap {
+      position: absolute;
+      bottom: 32px; left: -32px;
+      background: var(--grad-rose);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+    .about-badge-wrap strong { display: block; font-size: 1.8rem; font-weight: 700; }
+    .about-badge-wrap span { font-size: 0.78rem; opacity: 0.9; letter-spacing: 0.05em; }
+
+    .about-content {}
+    .about-lead {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .about-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 36px;
+    }
+    .about-tag {
+      background: var(--lavender-light);
+      color: #7a55c0;
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 36px;
+    }
+    .stat-card {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+    .stat-num {
+      font-family: var(--ff-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--rose);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label { font-size: 0.75rem; color: var(--text-soft); margin-top: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ===========================
+       SERVICES SECTION
+    =========================== */
+    #services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--grad-rose);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--rose-light); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      background: var(--rose-pale);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon { background: var(--grad-rose); transform: scale(1.08); }
+    .service-card:hover .service-icon svg { filter: brightness(0) invert(1); }
+
+    .service-name {
+      font-family: var(--ff-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .service-desc { font-size: 0.88rem; color: var(--text-soft); line-height: 1.75; }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--rose);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===========================
+       TREATMENTS SECTION
+    =========================== */
+    #treatments { background: var(--white); }
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .treatment-chip {
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .treatment-chip:hover {
+      background: var(--grad-rose);
+      border-color: transparent;
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: var(--shadow-hover);
+    }
+    .treatment-chip:hover .tch-icon,
+    .treatment-chip:hover .tch-label { color: var(--white); }
+
+    .tch-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .tch-label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); letter-spacing: 0.02em; }
+
+    /* ===========================
+       WHY CHOOSE US
+    =========================== */
+    #why {
+      background: linear-gradient(135deg, #fde8ec 0%, #ede5fb 50%, #fff5ee 100%);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: var(--transition);
+    }
+    .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); background: rgba(255,255,255,0.92); }
+
+    .why-icon {
+      width: 52px; height: 52px;
+      background: var(--grad-rose);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      box-shadow: 0 6px 20px rgba(232,120,138,0.3);
+    }
+    .why-title {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .why-desc { font-size: 0.87rem; color: var(--text-soft); line-height: 1.75; }
+
+    /* ===========================
+       RESULTS GALLERY
+    =========================== */
+    #results { background: var(--cream); }
+    .results-intro { max-width: 1200px; margin: 0 auto; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px; margin: 0 auto 20px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(45,31,38,0.65) 0%, transparent 60%);
+      display: flex; align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-label {
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .disclaimer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      max-width: 600px; margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===========================
+       TESTIMONIALS
+    =========================== */
+    #testimonials { background: var(--white); }
+    .testimonials-slider-wrap {
+      max-width: 1200px; margin: 0 auto;
+      overflow: hidden; position: relative;
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .testimonial-card {
+      min-width: calc(33.333% - 16px);
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .testimonial-quote {
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--rose-light);
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
+    }
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-stars { color: #f5a623; font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--rose-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .author-name { font-weight: 600; font-size: 0.88rem; color: var(--text-dark); }
+    .author-tag { font-size: 0.75rem; color: var(--text-soft); }
+
+    .slider-controls {
+      display: flex; justify-content: center; align-items: center;
+      gap: 12px; margin-top: 36px;
+    }
+    .slider-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .slider-btn:hover { background: var(--rose); border-color: var(--rose); color: var(--white); }
+    .slider-dots { display: flex; gap: 8px; }
+    .slider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      border: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .slider-dot.active { background: var(--rose); width: 24px; border-radius: 4px; }
+
+    /* ===========================
+       FAQ SECTION
+    =========================== */
+    #faq { background: var(--cream); }
+    .faq-wrap {
+      max-width: 760px; margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-item:hover { border-color: var(--rose-light); }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 22px 28px;
+      background: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px;
+      transition: var(--transition);
+    }
+    .faq-question:hover { color: var(--rose); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--rose-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+      color: var(--rose);
+      transition: transform 0.35s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--rose); color: var(--white); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.35s ease;
+      padding: 0 28px;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 28px 22px; }
+    .faq-answer p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.8; }
+
+    /* ===========================
+       APPOINTMENT SECTION
+    =========================== */
+    #appointment {
+      background: linear-gradient(135deg, #2d1f26 0%, #3d2535 50%, #2d1f26 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #appointment .blob {
+      background: rgba(232,120,138,0.12);
+    }
+
+    .appt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .appt-left .section-tag { background: rgba(255,255,255,0.1); color: var(--rose-light); }
+    .appt-left .section-title { color: var(--white); }
+    .appt-left .section-title em { color: var(--rose-light); }
+    .appt-left p { color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 32px; }
+
+    .appt-features { display: flex; flex-direction: column; gap: 16px; }
+    .appt-feat {
+      display: flex; align-items: center; gap: 12px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+    }
+    .appt-feat-dot {
+      width: 8px; height: 8px;
+      background: var(--rose);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .appt-form {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .appt-form h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .form-input, .form-select, .form-textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      color: var(--white);
+      font-family: var(--ff-sans);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      width: 100%;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--rose);
+      background: rgba(255,255,255,0.12);
+    }
+    .form-select option { background: #3d2535; color: white; }
+    .form-textarea { resize: vertical; min-height: 90px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--grad-rose);
+      color: var(--white);
+      padding: 15px;
+      border-radius: 99px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      box-shadow: 0 8px 28px rgba(232,120,138,0.45);
+      transition: var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(232,120,138,0.55); }
+
+    /* ===========================
+       CONTACT SECTION
+    =========================== */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      max-width: 1200px; margin: 0 auto;
+      align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px;
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .contact-item:hover { border-color: var(--rose-light); box-shadow: var(--shadow-card); }
+    .contact-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--rose-pale);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .contact-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 4px; }
+    .contact-value { font-size: 0.92rem; color: var(--text-dark); font-weight: 500; }
+    .contact-value a { color: var(--rose); }
+
+    .map-embed {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border);
+    }
+    .map-embed iframe { display: block; width: 100%; height: 380px; border: none; }
+    .map-placeholder {
+      width: 100%; height: 380px;
+      background: var(--cream);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; color: var(--text-soft);
+      font-size: 0.88rem;
+    }
+    .map-placeholder span { font-size: 2.5rem; }
+
+    .social-row {
+      display: flex; gap: 12px; margin-top: 8px;
+    }
+    .social-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      font-size: 1rem;
+      transition: var(--transition);
+      color: var(--text-mid);
+    }
+    .social-btn:hover { background: var(--rose); color: var(--white); border-color: var(--rose); transform: translateY(-3px); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.75);
+      padding: 64px 5% 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1200px; margin: 0 auto 48px;
+    }
+    .footer-brand .nav-brand { color: var(--white); margin-bottom: 16px; display: block; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.55); }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--rose); transform: translateY(-3px); }
+
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--rose-light); padding-left: 4px; }
+
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-credit a { color: var(--rose-light); }
+
+    /* ===========================
+       FLOATING WHATSAPP
+    =========================== */
+    .wa-float {
+      position: fixed;
+      bottom: 32px; right: 28px;
+      width: 58px; height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+      z-index: 800;
+      transition: var(--transition);
+      animation: floatWA 3s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.12); box-shadow: 0 12px 36px rgba(37,211,102,0.55); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+    @keyframes floatWA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .wa-float:hover { animation: none; transform: scale(1.12); }
+
+    /* ===========================
+       BACK TO TOP
+    =========================== */
+    #back-top {
+      position: fixed;
+      bottom: 102px; right: 28px;
+      width: 44px; height: 44px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rose);
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-card);
+      z-index: 799;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    #back-top.visible { opacity: 1; pointer-events: all; }
+    #back-top:hover { background: var(--rose); color: var(--white); transform: translateY(-3px); }
+
+    /* ===========================
+       SECTION DIVIDERS
+    =========================== */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--rose-light), var(--lavender), transparent);
+      border: none; margin: 0;
+    }
+
+    /* ===========================
+       EASTER EGG
+    =========================== */
+    #easter-egg {
+      position: fixed;
+      inset: 0; z-index: 9997;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    #easter-egg.show { opacity: 1; pointer-events: all; }
+    .easter-inner {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: var(--rose);
+      text-align: center;
+      line-height: 1.4;
+      animation: easterPop 0.5s ease forwards;
+      pointer-events: none;
+    }
+    @keyframes easterPop { from{transform:scale(0.7);opacity:0} to{transform:scale(1);opacity:1} }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .hero-inner { gap: 40px; }
+      .about-grid { gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .testimonial-card { min-width: calc(50% - 12px); }
+      .appt-grid { gap: 48px; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 5%; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .hero-trust { justify-content: center; }
+      .hero-image-wrap { order: -1; }
+      .fc-1 { left: -10px; bottom: 20px; }
+      .fc-2 { right: -10px; top: 20px; }
+      .fc-3 { display: none; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-badge-wrap { left: 16px; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+
+      .appt-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .testimonial-card { min-width: calc(100% - 0px); }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-heading { font-size: 2.2rem; }
+      .appt-form { padding: 24px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .stats-row .stat-card:last-child { grid-column: span 2; }
+    }
+
+    /* ===========================
+       SHIMMER
+    =========================== */
+    .shimmer {
+      background: linear-gradient(90deg, #f5e8ed 25%, #fde8ec 50%, #f5e8ed 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s infinite;
+    }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+  </style>
+</head>
+<body>
+
+  <!-- SCROLL BAR -->
+  <div id="scroll-bar"></div>
+
+  <!-- EASTER EGG -->
+  <div id="easter-egg" aria-hidden="true">
+    <div class="easter-inner">🌸 Wellness is a journey, not a destination 🌸</div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader" role="status" aria-label="Loading">
+    <div class="loader-petals" aria-hidden="true">
+      <div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div>
+      <div class="petal"></div><div class="petal"></div>
+    </div>
+    <div class="loader-logo">
+      Dr. <span>Shambhvi Dhyanibali</span><br>Women's Wellness &amp; Homeopathy
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
+    <p class="loader-credit">Made with ❤️ by <a href="https://yourportfolio.com" target="_blank" rel="noopener">Prateek</a></p>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/91XXXXXXXXXX?text=Hello%20Dr.%20Shambhvi!%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" aria-label="WhatsApp Consultation">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#home" class="nav-brand" aria-label="Dr. Shambhvi Dhyanibali Home">
+      Dr. Shambhvi Dhyanibali
+      <span>Women's Wellness &amp; Homeopathy</span>
+    </a>
+    <div class="nav-links">
+      <a href="#home"         class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#results">Results</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#appointment" class="nav-cta">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#results">Results</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#appointment" class="nav-cta">Book Appointment</a>
+  </div>
+
+  <!-- =====================
+       HERO SECTION
+  ===================== -->
+  <section id="home" aria-label="Hero section">
+    <div class="blob hero-blob-1"></div>
+    <div class="blob hero-blob-2"></div>
+    <div class="hero-inner">
+      <!-- Left -->
+      <div>
+        <div class="hero-badge reveal">
+          <span class="dot"></span>
+          Certified Homeopath &amp; Wellness Expert
+        </div>
+        <h1 class="hero-heading reveal">
+          Heal Naturally,<br>
+          <em>Glow Holistically</em><br>
+          <strong>Feel Like You</strong>
+        </h1>
+        <p class="hero-sub reveal">
+          Specialised homeopathic care for women — from PCOD &amp; hormonal health to radiant skin, lustrous hair, and complete inner wellness.
+        </p>
+        <div class="hero-btns reveal">
+          <a href="#appointment" class="btn-primary">Book Appointment</a>
+          <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Dr.%20Shambhvi!%20I%20would%20like%20a%20WhatsApp%20consultation." target="_blank" rel="noopener" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp Consult
+          </a>
+        </div>
+        <div class="hero-trust reveal">
+          <div class="trust-item">
+            <div class="trust-icon">🌿</div>
+            <div class="trust-text"><strong>100% Natural</strong>No side effects</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">👩</div>
+            <div class="trust-text"><strong>Women-Only</strong>Safe space</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">📱</div>
+            <div class="trust-text"><strong>Online Consult</strong>Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="hero-image-wrap reveal-right">
+        <div class="hero-img-card">
+          <img src="images/hero-banner.jpg" alt="Dr. Shambhvi Dhyanibali - Women's Wellness Homeopath" loading="eager" />
+        </div>
+        <!-- Floating cards -->
+        <div class="floating-card fc-1">
+          <div class="fc-inner">
+            <div class="fc-icon">✨</div>
+            <div class="fc-text"><strong>1200+ Patients</strong><span>Transformed Lives</span></div>
+          </div>
+        </div>
+        <div class="floating-card fc-2">
+          <div class="fc-inner">
+            <div class="fc-icon">🌸</div>
+            <div class="fc-text"><strong>PCOD Specialist</strong><span>Expert Care</span></div>
+          </div>
+        </div>
+        <div class="floating-card fc-3">
+          <div class="fc-inner">
+            <div class="fc-icon">⭐</div>
+            <div class="fc-text"><strong>4.9 Rating</strong><span>Patient Reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       ABOUT SECTION
+  ===================== -->
+  <section id="about" aria-label="About Dr. Shambhvi">
+    <div class="blob" style="width:500px;height:500px;background:rgba(197,174,232,0.1);top:-100px;right:-150px;"></div>
+    <div class="about-grid">
+      <!-- Image -->
+      <div class="about-img-wrap reveal-left">
+        <div class="about-img-frame">
+          <img src="images/doctor.jpg" alt="Dr. Shambhvi Dhyanibali - Homeopath" loading="lazy" />
+        </div>
+        <div class="about-badge-wrap">
+          <strong><span class="counter" data-target="8">0</span>+</strong>
+          <span>Years of Healing</span>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="about-content reveal-right">
+        <span class="section-tag">About the Doctor</span>
+        <h2 class="section-title">Dr. Shambhvi<br><em>Dhyanibali</em></h2>
+        <p class="about-lead">
+          Dr. Shambhvi Dhyanibali is a passionate homeopath dedicated exclusively to women's wellness. With over 8 years of clinical experience, she combines classical homeopathy with modern nutritional science to create deeply personalised healing journeys.
+        </p>
+        <p class="about-lead">
+          Her holistic approach addresses the root cause — not just the symptoms — empowering women from teen years through adulthood to reclaim their vitality, confidence, and natural beauty.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">PCOD &amp; Hormonal Health</span>
+          <span class="about-tag">Acne &amp; Skin Care</span>
+          <span class="about-tag">Hair Fall Treatment</span>
+          <span class="about-tag">Women's Wellness</span>
+          <span class="about-tag">Diet &amp; Nutrition</span>
+          <span class="about-tag">Thyroid Support</span>
+          <span class="about-tag">Lifestyle Counselling</span>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-num counter" data-target="1200">0</span>
+            <span class="stat-label">Happy Patients</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">8+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num counter" data-target="15">0</span>
+            <span class="stat-label">Wellness Programs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       SERVICES SECTION
+  ===================== -->
+  <section id="services" aria-label="Services">
+    <div class="section-header">
+      <span class="section-tag reveal">Our Services</span>
+      <h2 class="section-title reveal">Comprehensive Care<br><em>Crafted for Women</em></h2>
+      <p class="section-sub reveal">Each treatment plan is uniquely designed — because no two women, and no two journeys, are ever the same.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Cards -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="service-name">PCOD / PCOS Care</div>
+        <p class="service-desc">Hormonal rebalancing, cycle regulation, and root-cause treatment through gentle, effective homeopathy and nutritional guidance.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="service-name">Skin Treatment</div>
+        <p class="service-desc">Personalised solutions for acne, pigmentation, dullness, and skin glow — naturally healing from inside out.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Hair Fall Treatment</div>
+        <p class="service-desc">Addressing hair thinning, excessive shedding, and scalp health with constitutional homeopathic remedies.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><path d="M3 2l4 4m0 0l4-4M7 6V2m0 4l-4 4m4-4l4 4M3 14l4-4m0 0l4 4m-4-4v4"/><circle cx="17" cy="17" r="4"/></svg>
+        </div>
+        <div class="service-name">Diet &amp; Nutrition</div>
+        <p class="service-desc">Science-backed, personalised nutrition plans supporting hormonal health, weight management, and sustained energy.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="service-name">Hormonal Wellness</div>
+        <p class="service-desc">Balancing oestrogen, progesterone, and thyroid hormones for mood stability, energy, and reproductive health.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div class="service-name">Acne Treatment</div>
+        <p class="service-desc">Targeting hormonal, cystic, and chronic acne at root level — clear, confident skin without harsh chemicals.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="service-name">Lifestyle Consultation</div>
+        <p class="service-desc">Holistic coaching on sleep, stress, movement, and mindset to create sustainable, joyful wellbeing.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8788a" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+        </div>
+        <div class="service-name">Women's Health Counselling</div>
+        <p class="service-desc">A safe, compassionate space to address menstrual health, perimenopause, fertility, and emotional wellbeing.</p>
+        <a href="#appointment" class="service-link">Consult Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       TREATMENTS SECTION
+  ===================== -->
+  <section id="treatments" aria-label="Conditions we treat">
+    <div class="section-header">
+      <span class="section-tag reveal">Problems We Treat</span>
+      <h2 class="section-title reveal">You Are <em>Not Alone</em><br>We Have Solutions</h2>
+      <p class="section-sub reveal">Hover to explore the conditions we treat with gentle, effective homeopathic care.</p>
+    </div>
+
+    <div class="treatments-grid">
+      <div class="treatment-chip reveal"><span class="tch-icon">🌀</span><span class="tch-label">Irregular Periods</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🔴</span><span class="tch-label">Acne &amp; Pimples</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">💇</span><span class="tch-label">Hair Fall</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🧠</span><span class="tch-label">Stress &amp; Anxiety</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">⚖️</span><span class="tch-label">Weight Management</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🦋</span><span class="tch-label">Thyroid Support</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🫶</span><span class="tch-label">Digestive Health</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">💊</span><span class="tch-label">Hormonal Imbalance</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">✨</span><span class="tch-label">Skin Glow &amp; Beauty</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🌙</span><span class="tch-label">Sleep Issues</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🩸</span><span class="tch-label">PCOD / PCOS</span></div>
+      <div class="treatment-chip reveal"><span class="tch-icon">🌿</span><span class="tch-label">Detox &amp; Cleanse</span></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       WHY CHOOSE US
+  ===================== -->
+  <section id="why" aria-label="Why choose us">
+    <div class="section-header">
+      <span class="section-tag reveal">Why Choose Us</span>
+      <h2 class="section-title reveal">Healing That Feels<br><em>Personal &amp; Profound</em></h2>
+      <p class="section-sub reveal">Every woman deserves care that honours her individuality. Here's what sets us apart.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🌿</div>
+        <div class="why-title">Holistic Care</div>
+        <p class="why-desc">We treat the whole woman — body, mind, and soul — not just isolated symptoms. True healing is always complete.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🎯</div>
+        <div class="why-title">Personalised Treatment</div>
+        <p class="why-desc">No generic prescriptions. Every remedy, every plan is crafted specifically for your unique constitution and concerns.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🌸</div>
+        <div class="why-title">Natural Healing</div>
+        <p class="why-desc">Gentle homeopathic remedies with zero side effects, safe for all ages — from teen girls to mature women.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">👩‍⚕️</div>
+        <div class="why-title">Women-Centred</div>
+        <p class="why-desc">A safe, judgement-free space where you are truly heard, understood, and supported throughout your journey.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🥗</div>
+        <div class="why-title">Nutrition Guidance</div>
+        <p class="why-desc">Integrated dietary plans that complement homeopathic treatment for faster, more sustainable results.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📱</div>
+        <div class="why-title">Online Consultation</div>
+        <p class="why-desc">Book from anywhere in India or abroad. Convenient follow-ups and ongoing support through WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       RESULTS SECTION
+  ===================== -->
+  <section id="results" aria-label="Before and after results">
+    <div class="results-intro">
+      <div class="section-header">
+        <span class="section-tag reveal">Visible Transformations</span>
+        <h2 class="section-title reveal">Real Patients,<br><em>Real Results</em></h2>
+        <p class="section-sub reveal">These transformations represent months of dedicated homeopathic treatment, nutrition, and lifestyle changes — all led by Dr. Shambhvi.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="images/result-1.jpg" alt="Skin transformation result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">Acne — 3 Months Treatment</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="images/result-2.jpg" alt="PCOD treatment result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">PCOD — Cycle Regulated in 4 Months</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="images/result-3.jpg" alt="Hair fall treatment result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">Hair Fall — Reduced in 6 Weeks</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="images/result-4.jpg" alt="Skin glow result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">Skin Glow — Pigmentation Cleared</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="images/result-5.jpg" alt="Weight management result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">Weight — 8 kg Lost in 3 Months</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="images/result-6.jpg" alt="Hormonal wellness result" loading="lazy" />
+        <div class="gallery-overlay"><span class="gallery-label">Hormonal Balance Restored</span></div>
+      </div>
+    </div>
+    <p class="disclaimer reveal">* Results may vary from person to person. All treatments are supervised and individualised. Images shared with patient consent.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       TESTIMONIALS
+  ===================== -->
+  <section id="testimonials" aria-label="Patient testimonials">
+    <div class="section-header">
+      <span class="section-tag reveal">Testimonials</span>
+      <h2 class="section-title reveal">Words from Our<br><em>Transformed Patients</em></h2>
+    </div>
+
+    <div class="testimonials-slider-wrap reveal">
+      <div class="testimonials-track" id="ttrack">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">My PCOD journey was so frustrating until I found Dr. Shambhvi. Within 3 months of treatment, my cycle regularised and my acne cleared dramatically. She truly listens and understands what you're going through.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/patient-1.jpg" alt="Priya M." loading="lazy" /></div>
+            <div><div class="author-name">Priya M.</div><div class="author-tag">PCOD Patient, Pune</div></div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">I had tried everything for my hair fall and nothing worked. Dr. Shambhvi's homeopathic treatment combined with her diet plan has given me back so much hair volume in just 2 months. I'm thrilled!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/patient-2.jpg" alt="Sneha K." loading="lazy" /></div>
+            <div><div class="author-name">Sneha K.</div><div class="author-tag">Hair Fall Patient, Mumbai</div></div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">The personalised nutrition plan alongside the homeopathic medicines has been life-changing. I've lost 9 kgs and my energy levels are incredible. Dr. Shambhvi's approach is holistic and deeply caring.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/patient-3.jpg" alt="Ananya R." loading="lazy" /></div>
+            <div><div class="author-name">Ananya R.</div><div class="author-tag">Weight & Wellness Patient, Bengaluru</div></div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">I was struggling with hormonal imbalance and thyroid issues for years. After 4 months with Dr. Shambhvi, my thyroid levels are stable and I feel like myself again. Highly recommend to every woman.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/patient-4.jpg" alt="Divya S." loading="lazy" /></div>
+            <div><div class="author-name">Divya S.</div><div class="author-tag">Thyroid Patient, Delhi</div></div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">My teenage daughter had severe cystic acne. After homeopathic treatment, her skin is clear and her confidence is back. Dr. Shambhvi is gentle, patient, and truly wonderful with young girls.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar"><img src="images/patient-5.jpg" alt="Meera V." loading="lazy" /></div>
+            <div><div class="author-name">Meera V.</div><div class="author-tag">Mother of Patient, Chennai</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="slider-btn" id="prevBtn" aria-label="Previous">‹</button>
+        <div class="slider-dots" id="sdots"></div>
+        <button class="slider-btn" id="nextBtn" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       FAQ SECTION
+  ===================== -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="section-header">
+      <span class="section-tag reveal">FAQ</span>
+      <h2 class="section-title reveal">Questions You<br><em>May Be Wondering</em></h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          What is homeopathy and is it safe?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Homeopathy is a 200-year-old system of natural medicine that stimulates the body's own healing ability using highly diluted remedies. It is completely safe, non-toxic, non-addictive, and has no side effects — making it ideal for women, teens, and even during pregnancy.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Can homeopathy treat PCOD / PCOS?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Absolutely. Homeopathy addresses PCOD at the root level by correcting hormonal imbalances, regulating the menstrual cycle, reducing cysts, and improving insulin sensitivity. Results are gradual but long-lasting. Most patients see significant improvements within 2–4 months of treatment.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          How long does it take to see results for skin / hair concerns?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>For acne and skin concerns, most patients notice improvements within 4–8 weeks. Hair fall typically reduces within 6–8 weeks, with noticeable regrowth within 3–4 months. Timelines vary based on severity, age, and consistency with treatment and diet plans.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Is online consultation available?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes! Dr. Shambhvi offers online consultations via video call and WhatsApp for patients across India and internationally. Medicines are shipped directly to your address. Follow-ups are conducted online for maximum convenience.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Do you provide diet plans with treatment?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes, personalised nutrition and lifestyle guidance is an integral part of all treatment plans. Food choices profoundly impact hormonal health, skin, hair, and energy levels. Dietary advice is tailored to your specific condition and food preferences.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Can I take homeopathy alongside my current medications?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes, in most cases homeopathic medicines can be safely taken alongside conventional medicines. Dr. Shambhvi will review your existing medications during consultation and design your treatment plan accordingly. Always disclose all current medicines during your consultation.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          What happens during the first consultation?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Your first consultation is a comprehensive 45–60 minute session. Dr. Shambhvi will take a detailed medical history, understand your lifestyle, stress levels, diet, and emotional health. This holistic picture helps create your fully personalised treatment plan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       APPOINTMENT SECTION
+  ===================== -->
+  <section id="appointment" aria-label="Book appointment">
+    <div class="blob" style="width:500px;height:500px;background:rgba(232,120,138,0.08);top:-100px;left:-150px;"></div>
+    <div class="blob" style="width:400px;height:400px;background:rgba(197,174,232,0.06);bottom:-100px;right:-100px;"></div>
+
+    <div class="appt-grid">
+      <div class="appt-left">
+        <span class="section-tag reveal">Book Now</span>
+        <h2 class="section-title reveal" style="color:white;">Start Your<br><em>Wellness Journey</em></h2>
+        <p class="reveal">Fill in your details and we'll send your appointment request directly on WhatsApp. Our team will confirm your slot within 2 hours.</p>
+        <div class="appt-features reveal">
+          <div class="appt-feat"><div class="appt-feat-dot"></div>Free first consultation call</div>
+          <div class="appt-feat"><div class="appt-feat-dot"></div>Online &amp; in-person slots available</div>
+          <div class="appt-feat"><div class="appt-feat-dot"></div>Medicines delivered to your door</div>
+          <div class="appt-feat"><div class="appt-feat-dot"></div>Ongoing WhatsApp support</div>
+          <div class="appt-feat"><div class="appt-feat-dot"></div>100% confidential &amp; judgment-free</div>
+        </div>
+      </div>
+
+      <div class="appt-form reveal">
+        <h3>Book an Appointment</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="appt-name">Full Name</label>
+            <input type="text" id="appt-name" class="form-input" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="appt-phone">Phone Number</label>
+            <input type="tel" id="appt-phone" class="form-input" placeholder="+91 XXXXXXXXXX" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="appt-age">Age</label>
+            <input type="number" id="appt-age" class="form-input" placeholder="Your age" min="10" max="100" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="appt-time">Preferred Time</label>
+            <select id="appt-time" class="form-select">
+              <option value="">Select a slot</option>
+              <option>Morning (9am – 12pm)</option>
+              <option>Afternoon (12pm – 3pm)</option>
+              <option>Evening (4pm – 7pm)</option>
+              <option>Online Consultation</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-concern">Primary Concern</label>
+          <textarea id="appt-concern" class="form-textarea" placeholder="Describe your main health concern (e.g., PCOD, hair fall, acne...)"></textarea>
+        </div>
+        <button class="btn-submit" id="apptSubmit" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Send Appointment via WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       CONTACT SECTION
+  ===================== -->
+  <section id="contact" aria-label="Contact information">
+    <div class="section-header">
+      <span class="section-tag reveal">Get in Touch</span>
+      <h2 class="section-title reveal">We Are<br><em>Here for You</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Clinic Address</div>
+            <div class="contact-value">123, Wellness Lane, Near City Park,<br>Pune, Maharashtra – 411001</div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value"><a href="tel:+91XXXXXXXXXX">+91 XXXX XXX XXX</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:dr.shambhvi@example.com">dr.shambhvi@example.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-icon">📸</div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value"><a href="https://instagram.com/drshambhvi" target="_blank" rel="noopener">@drshambhvi</a></div>
+          </div>
+        </div>
+        <div class="social-row reveal">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="Facebook">👥</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div class="map-embed reveal">
+        <!-- Replace with actual Google Maps embed src -->
+        <div class="map-placeholder">
+          <span>📍</span>
+          <strong>Google Maps Embed</strong>
+          <p style="font-size:0.78rem;color:var(--text-soft);text-align:center;max-width:300px;">Replace this with your Google Maps iframe embed code from maps.google.com → Share → Embed a map</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-brand">Dr. Shambhvi Dhyanibali<span>Women's Wellness &amp; Homeopathy</span></span>
+        <p>Holistic homeopathic care for women — healing PCOD, hormonal health, skin, hair, and complete wellbeing through the gentle power of nature.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+          <a href="#" aria-label="Facebook">👥</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Doctor</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">PCOD / PCOS Care</a></li>
+          <li><a href="#services">Skin Treatment</a></li>
+          <li><a href="#services">Hair Fall Treatment</a></li>
+          <li><a href="#services">Diet &amp; Nutrition</a></li>
+          <li><a href="#services">Hormonal Wellness</a></li>
+          <li><a href="#services">Online Consultation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+91XXXXXXXXXX">+91 XXXX XXX XXX</a></li>
+          <li><a href="mailto:dr.shambhvi@example.com">dr.shambhvi@example.com</a></li>
+          <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp Consult</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+          <li><a href="https://instagram.com/drshambhvi" target="_blank">@drshambhvi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Dr. Shambhvi Dhyanibali. All rights reserved.</p>
+      <p class="footer-credit">Made with ❤️ by <a href="https://yourportfolio.com" target="_blank" rel="noopener">Prateek</a></p>
+    </div>
+  </footer>
+
+  <!-- =====================
+       JAVASCRIPT
+  ===================== -->
+  <script>
+    // ===========================
+    // LOADER
+    // ===========================
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 2200);
+    });
+
+    // ===========================
+    // SCROLL PROGRESS BAR
+    // ===========================
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const pct = (scrolled / maxScroll) * 100;
+      document.getElementById('scroll-bar').style.width = pct + '%';
+    });
+
+    // ===========================
+    // NAVBAR SCROLL EFFECT & ACTIVE
+    // ===========================
+    const navbar = document.getElementById('navbar');
+    const backTop = document.getElementById('back-top');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      navbar.classList.toggle('scrolled', y > 40);
+      backTop.classList.toggle('visible', y > 400);
+
+      // Active nav link
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 90;
+        const bottom = top + sec.offsetHeight;
+        if (y >= top && y < bottom) {
+          navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + sec.id) a.classList.add('active');
+          });
+        }
+      });
+    });
+
+    // ===========================
+    // HAMBURGER MENU
+    // ===========================
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ===========================
+    // INTERSECTION OBSERVER REVEALS
+    // ===========================
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger delay
+          const delay = (entry.target.dataset.delay || 0);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    // Add stagger delays to grids
+    document.querySelectorAll('.services-grid .service-card, .treatments-grid .treatment-chip, .why-grid .why-card, .gallery-grid .gallery-item, .stats-row .stat-card').forEach((el, i) => {
+      el.dataset.delay = (i % 4) * 100;
+    });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ===========================
+    // ANIMATED COUNTERS
+    // ===========================
+    const counters = document.querySelectorAll('.counter');
+    const cObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const duration = 1800;
+          const step = target / (duration / 16);
+          let current = 0;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current).toLocaleString();
+          }, 16);
+          cObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => cObserver.observe(c));
+
+    // ===========================
+    // FAQ ACCORDION
+    // ===========================
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(q => q.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ===========================
+    // TESTIMONIALS SLIDER
+    // ===========================
+    const track = document.getElementById('ttrack');
+    const cards = track.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('sdots');
+    let perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+    let currentSlide = 0;
+    const totalSlides = cards.length - perView + 1;
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function goTo(n) {
+      currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+      const cardWidth = cards[0].offsetWidth + 24;
+      track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+      document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => goTo(currentSlide - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => goTo(currentSlide + 1));
+    
+    // Auto-play
+    let autoSlide = setInterval(() => goTo(currentSlide + 1 >= totalSlides ? 0 : currentSlide + 1), 4500);
+    track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    track.addEventListener('mouseleave', () => {
+      autoSlide = setInterval(() => goTo(currentSlide + 1 >= totalSlides ? 0 : currentSlide + 1), 4500);
+    });
+
+    window.addEventListener('resize', () => {
+      perView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+      goTo(0);
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? goTo(currentSlide + 1) : goTo(currentSlide - 1);
+    });
+
+    // ===========================
+    // APPOINTMENT FORM → WHATSAPP
+    // ===========================
+    document.getElementById('apptSubmit').addEventListener('click', () => {
+      const name    = document.getElementById('appt-name').value.trim();
+      const phone   = document.getElementById('appt-phone').value.trim();
+      const age     = document.getElementById('appt-age').value.trim();
+      const time    = document.getElementById('appt-time').value;
+      const concern = document.getElementById('appt-concern').value.trim();
+
+      if (!name || !phone) {
+        alert('Please enter your name and phone number.');
+        return;
+      }
+
+      const msg = `Hello Dr. Shambhvi! 🌸
+
+I would like to book an appointment.
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Age:* ${age || 'Not provided'}
+*Preferred Time:* ${time || 'Flexible'}
+*Health Concern:* ${concern || 'Not specified'}
+
+Please confirm my appointment slot. Thank you! 🙏`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/91XXXXXXXXXX?text=${encoded}`, '_blank');
+    });
+
+    // ===========================
+    // EASTER EGG — typing "wellness"
+    // ===========================
+    let typed = '';
+    const secret = 'wellness';
+    const easterEgg = document.getElementById('easter-egg');
+
+    document.addEventListener('keydown', e => {
+      typed += e.key.toLowerCase();
+      if (typed.length > secret.length) typed = typed.slice(-secret.length);
+      if (typed === secret) {
+        easterEgg.classList.add('show');
+        setTimeout(() => easterEgg.classList.remove('show'), 2800);
+        typed = '';
+        // Confetti-like petals
+        for (let i = 0; i < 18; i++) {
+          createPetal();
+        }
+      }
+    });
+
+    function createPetal() {
+      const p = document.createElement('div');
+      p.style.cssText = `
+        position: fixed;
+        width: ${6 + Math.random() * 10}px;
+        height: ${10 + Math.random() * 16}px;
+        background: hsl(${340 + Math.random()*30}, 80%, ${70 + Math.random()*15}%);
+        border-radius: 50% 50% 0 50%;
+        left: ${Math.random() * 100}vw;
+        top: -20px;
+        z-index: 9996;
+        animation: petalFall ${2 + Math.random() * 2}s linear forwards;
+        transform: rotate(${Math.random() * 360}deg);
+        pointer-events: none;
+      `;
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 4000);
+    }
+
+    // Add petal fall keyframe dynamically
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+      @keyframes petalFall {
+        0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+
+    // ===========================
+    // SHIMMER on images (until loaded)
+    // ===========================
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.complete) {
+        img.classList.add('shimmer');
+        img.addEventListener('load', () => img.classList.remove('shimmer'));
+        img.addEventListener('error', () => img.classList.remove('shimmer'));
+      }
+    });
+
+    // ===========================
+    // SUBTLE PARALLAX on hero blobs
+    // ===========================
+    document.addEventListener('mousemove', e => {
+      const xFrac = (e.clientX / window.innerWidth - 0.5) * 20;
+      const yFrac = (e.clientY / window.innerHeight - 0.5) * 20;
+      document.querySelectorAll('.hero-blob-1, .hero-blob-2').forEach((b, i) => {
+        const factor = i === 0 ? 1 : -1;
+        b.style.transform = `translate(${xFrac * factor * 0.5}px, ${yFrac * factor * 0.5}px)`;
+      });
+    });
+  </script>
+
+<!--
+================================================
+IMAGES REQUIRED
+================================================
+
+Please add the following images to an "images/" folder next to this HTML file.
+
+1. doctor.jpg
+   Recommended Size: 800 × 1000 px
+   Usage: Dr. Shambhvi's profile photo in the About section
+
+2. hero-banner.jpg
+   Recommended Size: 900 × 1100 px (portrait)
+   Usage: Hero section main banner / doctor image
+
+3. result-1.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – Acne before/after
+
+4. result-2.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – PCOD before/after
+
+5. result-3.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – Hair fall before/after
+
+6. result-4.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – Skin glow / pigmentation before/after
+
+7. result-5.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – Weight management result
+
+8. result-6.jpg
+   Recommended Size: 600 × 750 px
+   Usage: Results gallery – Hormonal wellness result
+
+9. patient-1.jpg
+   Recommended Size: 200 × 200 px (square, face)
+   Usage: Testimonial avatar – Priya M.
+
+10. patient-2.jpg
+    Recommended Size: 200 × 200 px
+    Usage: Testimonial avatar – Sneha K.
+
+11. patient-3.jpg
+    Recommended Size: 200 × 200 px
+    Usage: Testimonial avatar – Ananya R.
+
+12. patient-4.jpg
+    Recommended Size: 200 × 200 px
+    Usage: Testimonial avatar – Divya S.
+
+13. patient-5.jpg
+    Recommended Size: 200 × 200 px
+    Usage: Testimonial avatar – Meera V.
+
+14. favicon.png
+    Recommended Size: 64 × 64 px (or 512 × 512 px for modern browsers)
+    Usage: Browser tab icon
+
+15. og-cover.jpg
+    Recommended Size: 1200 × 630 px
+    Usage: Open Graph social media preview image
+
+NOTES:
+- Use WebP format where possible for performance.
+- Compress images to under 200 KB each for fast loading.
+- Patient images must be used only with written consent.
+- All before/after images must comply with medical advertising guidelines.
+================================================
+-->
+
+</body>
+</html>
