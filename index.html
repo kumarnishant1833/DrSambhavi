@@ -566,6 +566,25 @@
     }
     .stat-label { font-size: 0.75rem; color: var(--text-soft); margin-top: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
 
+    .doctor-qualification{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:14px 0 22px;
+      font-size:0.95rem;
+      font-weight:600;
+      color:#6d4c7d;
+      letter-spacing:0.5px;
+    }
+    
+    .doctor-qualification .dot{
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#c5aee8;
+    }
+
     /* ===========================
        SERVICES SECTION
     =========================== */
@@ -1384,7 +1403,18 @@
       <!-- Content -->
       <div class="about-content reveal-right">
         <span class="section-tag">About the Doctor</span>
-        <h2 class="section-title">Dr. Shambhvi<br><em>Dhyanibali</em></h2>
+        <h2 class="section-title">
+          Dr. Shambhvi<br>
+          <em>Dhyanibali</em>
+        </h2>
+        
+        <div class="doctor-qualification">
+          <span>BHMS</span>
+          <span class="dot"></span>
+          <span>M.D. (Hom.)</span>
+          <span class="dot"></span>
+          <span>DNHE</span>
+        </div>
         <p class="about-lead">
           Dr. Shambhvi Dhyanibali is a passionate homeopath dedicated exclusively to women's wellness. With over 8 years of clinical experience, she combines classical homeopathy with modern nutritional science to create deeply personalised healing journeys.
         </p>
